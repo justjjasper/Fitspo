@@ -1,6 +1,9 @@
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import React, { useState } from 'react';
 
-export default function LogIn ( { info, setUsername, setLogin }: { info: any, setUsername: Function, setLogin: Function }) {
+export default function LogIn ( { setLogin }: { setLogin: Function }) {
+
+  const [userName, setUsername] = useState<string>('')
 
   const handleChange = (event: string) => {
     setUsername(event)

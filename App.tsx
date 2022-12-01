@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { useState } from 'react';
@@ -9,9 +9,8 @@ import Home from './screens/Home';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const [login, setLogin] = useState<boolean>(false)
 
-  const [username, setUsername] = useState('');
-  const [login, setLogin] = useState(false)
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -25,12 +24,10 @@ export default function App() {
             name="Log In"
             children={ () =>
               <LogIn
-              setLogin={setLogin}
-              setUsername= {setUsername}
-              info ={username}/> }
+              setLogin={setLogin}/>
+            }
           />
         )}
-
       </Stack.Navigator>
     </NavigationContainer>
   );
