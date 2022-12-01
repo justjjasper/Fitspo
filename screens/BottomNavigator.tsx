@@ -10,7 +10,7 @@ export default function BottomTabNavigator () {
     <Bottom.Navigator>
       <Bottom.Screen name ="Home" children={ () => <Home/> } />
       <Bottom.Screen name ="Calendar" children={ () => <Calendar/> } />
-      <Bottom.Screen name ="Profile" children= { () => <ProfileNavigator/> } />
+      <Bottom.Screen name ="Profile Navigator" children= { () => <ProfileNavigator/> } />
     </Bottom.Navigator>
   )
 }
