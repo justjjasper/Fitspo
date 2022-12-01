@@ -2,17 +2,35 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React, { useState } from 'react';
+import LogIn from './screens/LogIn';
+import Home from './screens/Home';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+
+  const [username, setUsername] = useState('');
+  const [login, setLogin] = useState(false)
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <View style ={styles.container}>
-          <Text> Hello World </Text>
-          <StatusBar style="auto"/>
-        </View>
+        {login ? (
+          <Stack.Screen
+            name = "Home"
+            children= { () => <Home/> }
+          />
+        ) : (
+          <Stack.Screen
+            name="Log In"
+            children={ () =>
+              <LogIn
+              setLogin={setLogin}
+              setUsername= {setUsername}
+              info ={username}/> }
+          />
+        )}
+
       </Stack.Navigator>
     </NavigationContainer>
   );
