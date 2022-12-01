@@ -21,7 +21,7 @@ export default function LogIn ( { setLogin }: { setLogin: Function }) {
         onChangeText= {handleChange}
       />
       <Button
-        title='Press me To LogIn Cutie'
+        title='Press Me To Log In Cutie'
         onPress ={handleSubmit}
       />
     </View>

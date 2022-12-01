@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { useState } from 'react';
 import LogIn from './screens/LogIn';
-import Home from './screens/Home';
+import BottomTabNavigator from './screens/BottomNavigator';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,8 +16,8 @@ export default function App() {
       <Stack.Navigator>
         {login ? (
           <Stack.Screen
-            name = "Home"
-            children= { () => <Home/> }
+            name = "Bottom Navigators"
+            children= { () => <BottomTabNavigator/> }
           />
         ) : (
           <Stack.Screen
